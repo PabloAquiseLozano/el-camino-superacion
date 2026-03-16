@@ -7,14 +7,13 @@
 :root {
     --primary-color: #e63946;
     --primary-dark: #c1121f;
-    --secondary-color: #1d3557;
-    --accent-color: #f4a261;
-    --bg-light: #f8f9fa;
-    --text-dark: #212529;
-    --text-light: #6c757d;
-    --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --bg-black: #0a0a0a;
+    --bg-card: #ffffff;
+    --text-white: #ffffff;
+    --text-black: #0a0a0a;
+    --text-gray: #a0a0a0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 html {
@@ -24,8 +23,8 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: var(--text-white);
+    background-color: var(--bg-black);
 }
 
 .container {
@@ -36,23 +35,23 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
-    color: var(--white);
+    background-color: var(--bg-black);
+    color: var(--text-white);
     padding: 40px 0;
     text-align: center;
-    box-shadow: var(--shadow);
+    border-bottom: 1px solid #222;
 }
 
 .logo {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
 }
 
 .tagline {
     font-size: 1.2rem;
-    opacity: 0.9;
+    color: var(--text-gray);
 }
 
 /* Main */
@@ -62,36 +61,89 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: var(--white);
+    background-color: var(--bg-black);
     padding: 60px 0;
     text-align: center;
-    box-shadow: var(--shadow);
-    margin-bottom: 40px;
+    border-bottom: 1px solid #222;
 }
 
 .hero h2 {
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--text-white);
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .hero p {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-gray);
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Social Links */
-.social-links {
+/* Quote Section */
+.quote-section {
+    background-color: var(--bg-black);
     padding: 40px 0 60px;
     text-align: center;
 }
 
+.quote-card {
+    background-color: var(--bg-card);
+    color: var(--text-black);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.quote-label {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.quote-card blockquote {
+    margin: 0;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-black);
+}
+
+.quote-author {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Social Links */
+.social-links {
+    background-color: var(--bg-black);
+    padding: 60px 0 80px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
 .social-links h3 {
     font-size: 1.8rem;
-    color: var(--secondary-color);
+    color: var(--text-white);
     margin-bottom: 30px;
+    font-weight: 600;
 }
 
 .links-grid {
@@ -108,17 +160,18 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px 20px;
-    background-color: var(--white);
+    background-color: #1a1a1a;
+    border: 1px solid #333;
     border-radius: 12px;
     text-decoration: none;
-    color: var(--text-dark);
-    box-shadow: var(--shadow);
+    color: var(--text-white);
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
 .social-link span {
@@ -128,12 +181,12 @@ body {
 }
 
 .social-link.tiktok {
-    color: #000000;
+    color: #ffffff;
 }
 
 .social-link.tiktok:hover {
     background: linear-gradient(135deg, #fe2c55 0%, #25f4ee 100%);
-    color: var(--white);
+    border-color: transparent;
 }
 
 .social-link.youtube {
@@ -142,7 +195,7 @@ body {
 
 .social-link.youtube:hover {
     background-color: #ff0000;
-    color: var(--white);
+    border-color: transparent;
 }
 
 .social-link.facebook {
@@ -151,7 +204,7 @@ body {
 
 .social-link.facebook:hover {
     background-color: #1877f2;
-    color: var(--white);
+    border-color: transparent;
 }
 
 .social-link.instagram {
@@ -160,26 +213,27 @@ body {
 
 .social-link.instagram:hover {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: var(--white);
+    border-color: transparent;
 }
 
 /* About Section */
 .about {
-    background-color: var(--white);
+    background-color: var(--bg-black);
     padding: 60px 0;
     text-align: center;
-    box-shadow: var(--shadow);
+    border-top: 1px solid #222;
 }
 
 .about h3 {
     font-size: 1.8rem;
-    color: var(--secondary-color);
+    color: var(--text-white);
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .about p {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-gray);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.8;
@@ -187,11 +241,11 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--secondary-color);
-    color: var(--white);
+    background-color: #000000;
+    color: var(--text-white);
     padding: 30px 0;
     text-align: center;
-    margin-top: 40px;
+    border-top: 1px solid #222;
 }
 
 .footer-nav {
@@ -199,24 +253,24 @@ body {
 }
 
 .footer-nav a {
-    color: var(--white);
+    color: var(--text-gray);
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer-nav a:hover {
-    opacity: 0.8;
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
 .separator {
     margin: 0 15px;
-    opacity: 0.6;
+    color: #444;
 }
 
 .copyright {
     font-size: 0.9rem;
-    opacity: 0.8;
+    color: #666;
 }
 
 /* Responsive */
@@ -233,6 +287,15 @@ body {
     .social-links h3,
     .about h3 {
         font-size: 1.5rem;
+    }
+
+    .quote-card {
+        padding: 30px 25px;
+        margin: 0 20px;
+    }
+
+    .quote-text {
+        font-size: 1.25rem;
     }
 
     .links-grid {

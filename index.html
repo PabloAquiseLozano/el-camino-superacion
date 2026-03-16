@@ -29,6 +29,18 @@
             </div>
         </section>
 
+        <section class="quote-section">
+            <div class="container">
+                <div class="quote-card">
+                    <span class="quote-label">Cita del Día</span>
+                    <blockquote id="daily-quote">
+                        <p class="quote-text">"El único modo de hacer un gran trabajo es amar lo que haces."</p>
+                        <cite class="quote-author">- Steve Jobs</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
         <section class="social-links">
             <div class="container">
                 <h3>Nuestras Redes</h3>
@@ -92,6 +104,57 @@
         ttq.instance("init", "YOUR_SDK_ID"), ttq.page(), ttq.track("PageView")
     }(window, document, "ttq");
     </script> -->
+    
+    <script>
+        const quotes = [
+            { text: "El único modo de hacer un gran trabajo es amar lo que haces.", author: "Steve Jobs" },
+            { text: "La excelencia no es un destino, es un camino continuo.", author: "Confucio" },
+            { text: "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito.", author: "Albert Schweitzer" },
+            { text: "Cree en ti mismo y todo será posible.", author: "Coco Chanel" },
+            { text: "El futuro pertenece a quienes creen en la belleza de sus sueños.", author: "Eleanor Roosevelt" },
+            { text: "No esperes a que las oportunidades lleguen a ti. Créalas.", author: "Chris Grosser" },
+            { text: "La motivación nos impulsa a empezar y el hábito nos mantiene.", author: "Jim Ryun" },
+            { text: "Todo lo que puedes imaginar es real.", author: "Pablo Picasso" },
+            { text: "El único límite para nuestros logros de mañana es nuestra duda de hoy.", author: "Franklin D. Roosevelt" },
+            { text: "No te conformes con lo que necesitas, lucha por lo que mereces.", author: "Steve Jobs" },
+            { text: "La disciplina es el puente entre tus metas y tus logros.", author: "Jim Rohn" },
+            { text: "El perseverante no es una larga carrera; es muchas cortas carreras una tras otra.", author: "Walter Elliot" },
+            { text: "Tu única limitación es la que te impones a ti mismo.", author: "Les Brown" },
+            { text: "El dolor de hoy es la fuerza de mañana.", author: "Desconocido" },
+            { text: "Cada día es una nueva oportunidad para cambiar tu vida.", author: "Desconocido" },
+            { text: "No importa cuántas veces caigas, lo importante es cuántas veces te levantes.", author: "Desconocido" },
+            { text: "El tamaño de tu éxito está determinado por tu creencia en ti mismo.", author: "Desconocido" },
+            { text: "La verdadera fortaleza surge en los momentos de dificultad.", author: "Desconocido" },
+            { text: "No busques ser mejor que los demás, busca ser mejor que ayer.", author: "Desconocido" },
+            { text: "El que tiene un porqué para vivir puede soportar casi cualquier cómo.", author: "Friedrich Nietzsche" },
+            { text: "La acción es la clave fundamental de todo éxito.", author: "Desconocido" },
+            { text: "Sé el cambio que quieres ver en el mundo.", author: "Mahatma Gandhi" },
+            { text: "La vida es lo que sucede mientras estás ocupado haciendo otros planes.", author: "John Lennon" },
+            { text: "No cuentes los días, haz que los días cuenten.", author: "Muhammad Ali" },
+            { text: "El coraje no es la ausencia del miedo, sino el juicio de que algo más es más importante.", author: "Ambrose Redmoon" },
+            { text: "La grandeza no está en nunca caer, sino en levantarse cada vez que caemos.", author: "Nelson Mandela" },
+            { text: "El éxito no es definitivo, el fracaso no es fatal: lo que cuenta es el valor para continuar.", author: "Winston Churchill" },
+            { text: "La mejor forma de predecir el futuro es crearlo.", author: "Peter Drucker" },
+            { text: "Cada maestro fue alguna vez un principiante.", author: "Desconocido" },
+            { text: "El éxito es la suma de pequeños esfuerzos repetidos día tras día.", author: "Robert Collier" }
+        ];
+
+        function getDailyQuote() {
+            const now = new Date();
+            const start = new Date(now.getFullYear(), 0, 0);
+            const diff = now - start;
+            const oneDay = 1000 * 60 * 60 * 24;
+            const dayOfYear = Math.floor(diff / oneDay);
+            const quoteIndex = dayOfYear % quotes.length;
+            return quotes[quoteIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const quote = getDailyQuote();
+            document.querySelector('.quote-text').textContent = '"' + quote.text + '"';
+            document.querySelector('.quote-author').textContent = '- ' + quote.author;
+        });
+    </script>
 
 </body>
 </html>
