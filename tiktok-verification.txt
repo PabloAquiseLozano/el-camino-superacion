@@ -1,6 +1,1 @@
-# Archivo de verificación de dominio para TikTok
-# Una vez que configures tu app en TikTok Developers Portal,
-# descarga el archivo de verificación y reemplaza este contenido.
-# El archivo se verá similar a: tiktok-verification: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
-# Este archivo debe estar en la raíz de tu dominio: https://tudominio.com/tiktok-verification.txt
+tiktok-developers-site-verification=OwcK7qDUEaNcQfedGvnAW9hdauBhx1AC
